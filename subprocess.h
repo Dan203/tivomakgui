@@ -5,7 +5,6 @@
 class CSubProcess
 {
 public:
-	using TIMER_CALLBACK = std::function<HRESULT()>;
 	using STD_OUT_CALLBACK = std::function<HRESULT(const CString&)>;
 
 	enum RESULTS
@@ -56,7 +55,6 @@ protected:
 	CString				m_sStdOut;
 	CString				m_sErrOut;
 	DWORD				m_exitCode;						// return code from called process.
-	TIMER_CALLBACK		m_fTimerCallback;						// Call back every m_milliseconds_to_timeout
 	STD_OUT_CALLBACK	m_fStdOutCallback;
 	STD_OUT_CALLBACK	m_fStdErrCallback;
 
